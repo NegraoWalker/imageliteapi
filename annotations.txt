@@ -1,0 +1,1 @@
+- @RequestParam("file") MultipartFile multipartFile : Interface usada para receber arquivos no formato mult-part/formdata, enviamos na requisição.
