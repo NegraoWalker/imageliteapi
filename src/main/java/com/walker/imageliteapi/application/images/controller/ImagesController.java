@@ -31,7 +31,13 @@ public class ImagesController {
         log.info("Tags: {}",tags);
         log.info("Content Type: {} ",multipartFile.getContentType());
         log.info("Media Type: {} ", MediaType.valueOf(multipartFile.getContentType()));
-        Image image = Image.builder().name(name).tags(String.join(",",tags)).extension(ImageExtension.valueOf(multipartFile.getContentType())).file(multipartFile.getBytes()).build();
+        Image image = Image.builder()
+                        .name(name)
+                                .tags(String.join(",",tags))
+                                        .size(multipartFile.getSize())
+                                                .extension(ImageExtension.valueOf(MediaType.valueOf(multipartFile.getContentType())))
+                                                        .file(multipartFile.getBytes())
+                                                                .build();
         imageService.save(image);
         return ResponseEntity.ok().build();
     }

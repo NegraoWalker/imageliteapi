@@ -1,6 +1,5 @@
 package com.walker.imageliteapi.domain.enums;
 
-import lombok.Getter;
 import org.springframework.http.MediaType;
 
 import java.util.Arrays;
